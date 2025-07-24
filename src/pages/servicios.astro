@@ -1,0 +1,260 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+
+const serviciosPrincipales = [
+  {
+    title: "Consulta Nutricional Integral",
+    desc: "Evaluación completa del estado nutricional con análisis de composición corporal, historia clínica y alimentaria.",
+    detalles: [
+      "Evaluación antropométrica completa",
+      "Análisis de composición corporal",
+      "Historia clínica y alimentaria detallada",
+      "Plan nutricional personalizado",
+    ],
+    duracion: "90 minutos",
+    precio: "Desde $800 MXN",
+  },
+  {
+    title: "Control de Peso",
+    desc: "Programas especializados para pérdida o ganancia de peso de manera saludable y sostenible.",
+    detalles: [
+      "Plan alimentario personalizado",
+      "Seguimiento semanal",
+      "Recetas y menús semanales",
+      "Apoyo psicológico nutricional",
+    ],
+    duracion: "60 minutos",
+    precio: "Desde $600 MXN",
+  },
+  {
+    title: "Nutrición Deportiva",
+    desc: "Planes nutricionales especializados para deportistas y personas con alta actividad física.",
+    detalles: [
+      "Periodización nutricional",
+      "Suplementación deportiva",
+      "Hidratación específica",
+      "Nutrición pre y post entreno",
+    ],
+    duracion: "75 minutos",
+    precio: "Desde $900 MXN",
+  },
+  {
+    title: "Nutrición Clínica",
+    desc: "Manejo nutricional de patologías como diabetes, hipertensión, dislipidemias y enfermedades gastrointestinales.",
+    detalles: [
+      "Manejo de diabetes tipo 1 y 2",
+      "Control de hipertensión",
+      "Tratamiento de dislipidemias",
+      "Nutrición en enfermedades GI",
+    ],
+    duracion: "60 minutos",
+    precio: "Desde $750 MXN",
+  },
+  {
+    title: "Nutrición Pediátrica",
+    desc: "Consultas especializadas para niños y adolescentes, enfocadas en un crecimiento y desarrollo óptimo.",
+    detalles: [
+      "Evaluación del crecimiento",
+      "Educación alimentaria familiar",
+      "Manejo de selectividad alimentaria",
+      "Prevención de obesidad infantil",
+    ],
+    duracion: "60 minutos",
+    precio: "Desde $700 MXN",
+  },
+  {
+    title: "Planes Familiares",
+    desc: "Programas nutricionales diseñados para toda la familia, promoviendo hábitos saludables en conjunto.",
+    detalles: [
+      "Menús familiares balanceados",
+      "Educación nutricional grupal",
+      "Recetas fáciles y nutritivas",
+      "Seguimiento familiar",
+    ],
+    duracion: "90 minutos",
+    precio: "Desde $1200 MXN",
+  },
+];
+---
+
+<Layout>
+  <Navbar />
+  <div class="h-[40px] md:h-[50px]"></div>
+
+  <!-- Hero de Servicios -->
+  <section class="w-full bg-green-700 py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <span
+        class="bg-green-200 text-green-900 text-sm font-semibold px-4 py-1 rounded-full shadow mb-4 inline-block"
+      >
+        Nuestros Servicios
+      </span>
+      <h1
+        class="text-4xl md:text-5xl font-extrabold text-white mb-2 leading-tight"
+      >
+        Servicios integrales de <span class="text-yellow-300">nutrición</span> y
+        dietética
+      </h1>
+      <p class="text-lg text-white mb-2">
+        Ofrecemos una amplia gama de servicios especializados en nutrición,
+        diseñados para atender las necesidades específicas de cada persona y
+        etapa de la vida.
+      </p>
+    </div>
+  </section>
+
+  <!-- Servicios Principales -->
+  <section class="py-14 bg-[#f6fbf6]">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <span
+          class="bg-green-700 text-white text-sm font-semibold px-4 py-1 rounded-full mb-4 shadow mx-auto inline-block"
+        >
+          Servicios Principales
+        </span>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-2">
+          Consultas especializadas
+        </h2>
+        <p class="text-lg text-gray-800 mb-10">
+          Nuestros servicios principales están diseñados para abordar diferentes
+          aspectos de la nutrición y adaptarse a las necesidades específicas de
+          cada paciente.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          serviciosPrincipales.map((servicio) => (
+            <div class="bg-white border border-green-100 rounded-2xl shadow p-8 flex flex-col items-start hover:shadow-lg transition relative group">
+              <h3 class="text-lg font-bold text-gray-800 mb-1">
+                {servicio.title}
+              </h3>
+              <p class="text-gray-800 text-sm mb-3">{servicio.desc}</p>
+              <ul class="mb-3 w-full">
+                {servicio.detalles.map((detalle) => (
+                  <li class="flex items-start text-green-700 mb-1">
+                    <svg
+                      class="w-5 h-5 mt-1 mr-2 text-green-600 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 10l3 3 7-7"
+                      />
+                    </svg>
+                    <span class="text-sm">{detalle}</span>
+                  </li>
+                ))}
+              </ul>
+              <div class="flex justify-between w-full text-green-800 text-xs mt-2 pt-2 border-t border-green-50">
+                <span>
+                  <b>Duración:</b> {servicio.duracion}
+                </span>
+                <span class="font-bold">{servicio.precio}</span>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Metodologia -->
+  <section class="bg-[#f6fbf6] py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col items-center mb-8">
+        <span
+          class="bg-green-700 text-white text-sm font-semibold px-4 py-1 rounded-full mb-4 shadow mx-auto inline-block"
+        >
+          Metodología
+        </span>
+        <h2
+          class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-2 text-center"
+        >
+          Nuestro proceso de trabajo
+        </h2>
+        <p class="text-lg text-gray-800 text-center max-w-2xl mx-auto mb-10">
+          Seguimos un proceso estructurado y personalizado que garantiza
+          resultados efectivos y duraderos.
+        </p>
+      </div>
+      <div class="flex flex-col md:flex-row gap-8">
+        <!-- Num 1 -->
+        <div
+          class="flex-1 bg-white border border-green-100 rounded-2xl shadow p-8 flex flex-col items-center hover:shadow-lg transition"
+        >
+          <div
+            class="bg-green-100 text-green-800 font-bold text-3xl rounded-full w-20 h-20 flex items-center justify-center mb-3 shadow-sm"
+          >
+            01
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2 text-center">
+            Evaluación Inicial
+          </h3>
+          <p class="text-gray-800 text-center">
+            Realizamos una evaluación completa de tu estado de salud, hábitos
+            alimentarios y objetivos específicos.
+          </p>
+        </div>
+        <!-- Num 2 -->
+        <div
+          class="flex-1 bg-white border border-green-100 rounded-2xl shadow p-8 flex flex-col items-center hover:shadow-lg transition"
+        >
+          <div
+            class="bg-green-100 text-green-800 font-bold text-3xl rounded-full w-20 h-20 flex items-center justify-center mb-3 shadow-sm"
+          >
+            02
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2 text-center">
+            Diseño del Plan
+          </h3>
+          <p class="text-gray-800 text-center">
+            Creamos un plan nutricional personalizado basado en tus necesidades,
+            preferencias y estilo de vida.
+          </p>
+        </div>
+        <!-- Num 3 -->
+        <div
+          class="flex-1 bg-white border border-green-100 rounded-2xl shadow p-8 flex flex-col items-center hover:shadow-lg transition"
+        >
+          <div
+            class="bg-green-100 text-green-800 font-bold text-3xl rounded-full w-20 h-20 flex items-center justify-center mb-3 shadow-sm"
+          >
+            03
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2 text-center">
+            Implementación
+          </h3>
+          <p class="text-gray-800 text-center">
+            Te acompañamos en la implementación del plan con herramientas
+            prácticas y apoyo continuo.
+          </p>
+        </div>
+        <!-- Num 4 -->
+        <div
+          class="flex-1 bg-white border border-green-100 rounded-2xl shadow p-8 flex flex-col items-center hover:shadow-lg transition"
+        >
+          <div
+            class="bg-green-100 text-green-800 font-bold text-3xl rounded-full w-20 h-20 flex items-center justify-center mb-3 shadow-sm"
+          >
+            04
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2 text-center">
+            Seguimiento
+          </h3>
+          <p class="text-gray-800 text-center">
+            Monitoreamos tu progreso y ajustamos el plan según sea necesario
+            para garantizar resultados óptimos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

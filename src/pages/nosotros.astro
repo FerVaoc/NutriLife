@@ -1,0 +1,282 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+
+const equipo = [
+  {
+    img: "/equipo/equipo-1.jpg",
+    nombre: "Dra. María González",
+    especialidad: "Nutrióloga Clínica",
+    experiencia: "8 años de experiencia",
+    descripcion:
+      "Especialista en nutrición clínica y deportiva. Apasionada por transformar la vida de sus pacientes a través de la educación y el acompañamiento.",
+  },
+  {
+    img: "/equipo/equipo-2.jpg",
+    nombre: "Lic. Carlos Hernández",
+    especialidad: "Nutriólogo Pediátrico",
+    experiencia: "6 años de experiencia",
+    descripcion:
+      "Experto en nutrición infantil, acompaña a familias para crear hábitos saludables desde la infancia.",
+  },
+  {
+    img: "/equipo/equipo-3.jpg",
+    nombre: "Dra. Ana López",
+    especialidad: "Especialista en Diabetes",
+    experiencia: "10 años de experiencia",
+    descripcion:
+      "Enfocada en el manejo integral de pacientes con enfermedades metabólicas y educación en salud.",
+  },
+];
+---
+
+<Layout>
+  <Navbar />
+  <div class="h-[40px] md:h-[50px]"></div>
+
+  <!-- Hero de nosotros -->
+  <section class="w-full bg-green-700 py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <span
+        class="bg-green-200 text-green-900 text-sm font-semibold px-4 py-1 rounded-full shadow mb-4 inline-block"
+      >
+        Sobre nosotros
+      </span>
+      <h1
+        class="text-4xl md:text-5xl font-extrabold text-white mb-2 leading-tight"
+      >
+        Expertos en nutrición comprometidos con tu <span class="text-yellow-300"
+          >bienestar</span
+        >
+      </h1>
+      <p class="text-lg text-white mb-2">
+        En NutriLife creemos que una alimentación adecuada es la base de una
+        vida plena y saludable. Nuestro equipo de profesionales certificados te
+        acompaña en cada paso hacia tus objetivos de salud.
+      </p>
+    </div>
+  </section>
+
+  <!-- Vision y la mision -->
+  <section class="w-full bg-[#f6fbf6] py-12 md:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- mision -->
+        <div class="bg-white border border-green-100 rounded-2xl shadow p-8">
+          <h2
+            class="text-3xl md:text-4xl font-extrabold text-gray-900 flex items-center gap-3 mb-6"
+          >
+            Nuestra Misión
+          </h2>
+          <p class="text-lg text-gray-800 mb-6">
+            Proporcionar servicios de nutrición de la más alta calidad, basados
+            en evidencia científica, para ayudar a nuestros pacientes a alcanzar
+            y mantener un estado óptimo de salud a través de una alimentación
+            personalizada y sostenible.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-2 text-green-700 text-base">
+              <svg
+                class="w-6 h-6 text-green-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                viewBox="0 0 24 24"
+                ><path
+                  d="M5 13l4 4L19 7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path></svg
+              >
+              Atención personalizada y profesional
+            </li>
+            <li class="flex items-center gap-2 text-green-700 text-base">
+              <svg
+                class="w-6 h-6 text-green-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                viewBox="0 0 24 24"
+                ><path
+                  d="M5 13l4 4L19 7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path></svg
+              >
+              Planes nutricionales basados en evidencia
+            </li>
+            <li class="flex items-center gap-2 text-green-700 text-base">
+              <svg
+                class="w-6 h-6 text-green-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                viewBox="0 0 24 24"
+                ><path
+                  d="M5 13l4 4L19 7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path></svg
+              >
+              Seguimiento continuo y apoyo integral
+            </li>
+          </ul>
+        </div>
+
+        <!-- vision -->
+        <div class="bg-white border border-green-100 rounded-2xl shadow p-8">
+          <h2
+            class="text-3xl md:text-4xl font-extrabold text-gray-900 flex items-center gap-3 mb-6"
+          >
+            Nuestra Visión
+          </h2>
+          <p class="text-lg text-gray-800 mb-6">
+            Ser el referente en servicios de nutrición y dietética, reconocidos
+            por transformar vidas a través de la educación nutricional y el
+            desarrollo de hábitos alimentarios saludables que perduren en el
+            tiempo.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-2 text-green-700 text-base">
+              <svg
+                class="w-6 h-6 text-green-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                viewBox="0 0 24 24"
+                ><path
+                  d="M5 13l4 4L19 7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path></svg
+              >
+              Liderazgo en innovación nutricional
+            </li>
+            <li class="flex items-center gap-2 text-green-700 text-base">
+              <svg
+                class="w-6 h-6 text-green-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                viewBox="0 0 24 24"
+                ><path
+                  d="M5 13l4 4L19 7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path></svg
+              >
+              Impacto positivo en la comunidad
+            </li>
+            <li class="flex items-center gap-2 text-green-700 text-base">
+              <svg
+                class="w-6 h-6 text-green-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                viewBox="0 0 24 24"
+                ><path
+                  d="M5 13l4 4L19 7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path></svg
+              >
+              Formación continua del equipo
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- historia de negocio -->
+  <section class="bg-[#f6fbf6] py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <span
+        class="bg-green-700 text-white text-sm font-semibold px-4 py-1 rounded-full mb-4 shadow mx-auto inline-block"
+      >
+        Nuestra Historia
+      </span>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+        Historia del negocio
+      </h2>
+      <p class="text-lg text-gray-800 mx-auto mb-10">
+        NutriLife nació en 2022 como el sueño de un grupo de profesionales
+        apasionados por la nutrición y el bienestar. Todo comenzó en una pequeña
+        consulta donde, día a día, fuimos testigos del impacto positivo que una
+        alimentación adecuada puede tener en la vida de las personas.<br /><br
+        />
+        Al principio, enfrentamos retos como la falta de recursos y el escepticismo
+        de algunos, pero nunca perdimos de vista nuestra misión de ofrecer atención
+        personalizada y basada en la ciencia. Con esfuerzo y dedicación, fuimos creciendo,
+        ampliando nuestros servicios y sumando especialistas al equipo.<br /><br
+        />
+        Hoy, NutriLife es un centro de referencia en nutrición, comprometido con
+        transformar vidas a través de la educación y el acompañamiento continuo.
+        Nuestro objetivo sigue siendo el mismo: ayudarte a alcanzar una vida más
+        saludable y plena.
+      </p>
+    </div>
+  </section>
+
+  <!-- Equipo de trabajo -->
+  <section id="equipo" class="w-full bg-[#f6fbf6] py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col items-center gap-3 mb-6">
+        <span
+          class="bg-green-700 text-white text-sm font-semibold px-4 py-1 rounded-full mb-4 shadow mx-auto inline-block"
+        >
+          Nuestro Equipo
+        </span>
+        <h2 class="text-5xl font-bold text-gray-800 text-center">
+          Profesionales certificados
+        </h2>
+        <p class="text-lg text-gray-800 text-center max-w-2xl">
+          Conoce al equipo multidisciplinario de NutriLife, comprometido con tu
+          salud y bienestar.
+        </p>
+      </div>
+      <div class="flex flex-col md:flex-row gap-8 mt-8">
+        {
+          equipo.map((persona) => (
+            <div class="relative flex-1 rounded-2xl overflow-hidden shadow-lg group cursor-pointer bg-white min-h-[410px] h-[410px] max-w-[370px] mx-auto">
+              <img
+                src={persona.img}
+                alt={persona.nombre}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 rounded-2xl"
+                width="400"
+                height="400"
+                loading="lazy"
+              />
+              {/* oscurecer imagen */}
+              <div class="absolute inset-0 bg-black/40" />
+              {/* el fondo siempre sube al hacer hover */}
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 z-10 flex flex-col 
+            transition-all duration-300
+            group-hover:translate-y-[-50px]
+            "
+              >
+                <h3 class="text-xl md:text-2xl font-bold text-white drop-shadow-lg mb-1">
+                  {persona.nombre}
+                </h3>
+                <span class="text-green-200 font-semibold mb-1 drop-shadow-lg">
+                  {persona.especialidad}
+                </span>
+                <span class="text-green-100 text-sm mb-1 drop-shadow-lg">
+                  {persona.experiencia}
+                </span>
+                {/* descripcion animada en hover */}
+                <p
+                  class="text-white text-base drop-shadow-lg mt-1
+                opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0
+                transition-all duration-300
+                bg-black/60 px-2 py-1 rounded-lg
+                "
+                >
+                  {persona.descripcion}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

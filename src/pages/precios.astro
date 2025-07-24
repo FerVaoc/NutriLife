@@ -1,0 +1,229 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+
+const planes = [
+  {
+    nombre: "Básico",
+    precio: "$1,500",
+    frecuencia: "/mes",
+    desc: "Ideal para personas que buscan iniciar cambios en su alimentación con el apoyo profesional básico.",
+    incluye: [
+      "1 consulta inicial completa (90 min)",
+      "Plan nutricional personalizado",
+      "1 consulta de seguimiento mensual",
+      "Recetario básico (15 recetas)",
+      "Acceso a menús estructurados",
+      "Soporte vía email",
+      "Medición de composición corporal",
+    ],
+    noIncluye: [
+      "Consultas adicionales",
+      "Planes de ejercicio",
+      "Soporte telefónico prioritario",
+    ],
+    boton: "Elegir Plan Básico",
+    destacado: false,
+    color: "green",
+  },
+  {
+    nombre: "Intermedio",
+    precio: "$2,800",
+    frecuencia: "/mes",
+    desc: "Perfecto para quienes desean un acompañamiento más cercano y herramientas adicionales para el éxito.",
+    incluye: [
+      "1 consulta inicial completa (90 min)",
+      "Plan nutricional personalizado avanzado",
+      "2 consultas de seguimiento mensuales",
+      "Recetario completo (30 recetas)",
+      "Menús semanales personalizados",
+      "Soporte vía WhatsApp",
+      "Lista de compras automatizada",
+      "Medición de composición corporal",
+      "Acceso a talleres y guías",
+      "Guía de suplementación básica",
+    ],
+    noIncluye: [
+      "Consultas adicionales ilimitadas",
+      "Planes de ejercicio personalizados",
+    ],
+    boton: "Elegir Plan Intermedio",
+    destacado: true,
+    color: "yellow",
+  },
+  {
+    nombre: "Plus",
+    precio: "$4,200",
+    frecuencia: "/mes",
+    desc: "La experiencia más completa con acompañamiento personalizado y todos los servicios incluidos.",
+    incluye: [
+      "1 consulta inicial extendida (120 min)",
+      "Plan nutricional y de ejercicio integral",
+      "Consultas de seguimiento ilimitadas",
+      "Recetario premium (50+ recetas)",
+      "Menús semanales personalizados",
+      "Soporte prioritario 24/7",
+      "Lista de compras automatizada",
+      "Medición de composición corporal quincenal",
+      "Acceso a talleres y guías",
+      "Suplementación personalizada",
+      "Checkin de progresos",
+      "Planes de ejercicio personalizado",
+      "Análisis de laboratorio incluido",
+      "Consultas familiares incluidas",
+    ],
+    noIncluye: [],
+    boton: "Elegir Plan Plus",
+    destacado: false,
+    color: "emerald",
+  },
+];
+---
+
+<Layout>
+  <Navbar />
+  <div class="h-[40px] md:h-[50px]"></div>
+
+  <!-- Hero de precios -->
+  <section class="w-full bg-green-700 py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <span
+        class="bg-green-200 text-green-900 text-sm font-semibold px-4 py-1 rounded-full shadow mb-4 inline-block"
+      >
+        Planes y Precios
+      </span>
+      <h1
+        class="text-4xl md:text-5xl font-extrabold text-white mb-2 leading-tight"
+      >
+        Invierte en tu <span class="text-yellow-300">salud</span> con el plan perfecto
+      </h1>
+      <p class="text-lg text-white mb-2">
+        Elige el plan que mejor se adapte a tus necesidades y objetivos. Todos
+        nuestros planes incluyen atención profesional certificada y seguimiento
+        personalizado.
+      </p>
+    </div>
+  </section>
+
+  <!-- planes -->
+  <section class="bg-[#f6fbf6] py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col items-center mb-10">
+        <span
+          class="bg-green-700 text-white text-sm font-semibold px-4 py-1 rounded-full mb-4 shadow mx-auto inline-block"
+        >
+          Planes de Suscripción
+        </span>
+        <h2
+          class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-2 text-center"
+        >
+          Planes diseñados para tu éxito
+        </h2>
+        <p class="text-lg text-gray-800 text-center max-w-2xl mx-auto mb-10">
+          Cada plan ha sido diseñado para brindarte el apoyo que necesitas en tu
+          camino hacia una vida más saludable.
+        </p>
+      </div>
+      <div
+        class="flex flex-col md:flex-row gap-8 md:gap-12 justify-center items-stretch"
+      >
+        {
+          planes.map((plan, idx) => (
+            <div
+              class={`flex-1 bg-white border ${plan.destacado ? "border-yellow-400 shadow-xl" : "border-green-100 shadow"} rounded-2xl p-8 flex flex-col items-center
+            ${plan.destacado ? "scale-105 z-10 relative" : ""} transition-all duration-200`}
+            >
+              {plan.destacado && (
+                <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-white text-xs font-semibold px-4 py-1 rounded-full shadow border border-yellow-300">
+                  Más Popular
+                </span>
+              )}
+              <h3 class="text-xl font-bold text-gray-800 mb-1 text-center">
+                {plan.nombre}
+              </h3>
+              <p class="text-sm text-gray-800 text-center mb-4">{plan.desc}</p>
+              <span class="text-3xl md:text-4xl font-extrabold text-green-700 mb-1">
+                {plan.precio}
+              </span>
+              <span class="text-green-700 text-sm">{plan.frecuencia}</span>
+              <div class="mt-4 mb-1 w-full">
+                <span class="block text-gray-800 font-semibold mb-2 text-center">
+                  Incluye:
+                </span>
+                <ul class="text-green-700 text-sm mb-2 space-y-1">
+                  {plan.incluye.map((item) => (
+                    <li class="flex items-start gap-2">
+                      <svg
+                        class="w-4 h-4 mt-[2px] text-green-500 flex-shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                {plan.noIncluye.length > 0 && (
+                  <>
+                    <span class="block text-gray-400 font-semibold mt-4 mb-2 text-center">
+                      No incluye:
+                    </span>
+                    <ul class="text-gray-400 text-sm space-y-1">
+                      {plan.noIncluye.map((item) => (
+                        <li class="flex items-start gap-2">
+                          <svg
+                            class="w-4 h-4 mt-[2px] text-gray-300 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M6 18L18 6M6 6l12 12"
+                            />
+                          </svg>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </div>
+              <button
+                class={`
+              w-full mt-6 font-bold py-2 px-4 rounded-lg transition
+              ${
+                plan.destacado
+                  ? "bg-yellow-400 hover:bg-yellow-500 text-white shadow"
+                  : "bg-green-700 hover:bg-green-800 text-white"
+              }
+            `}
+                type="button"
+              >
+                {plan.boton}
+              </button>
+            </div>
+          ))
+        }
+      </div>
+      <p class="text-xs text-green-800 font-bold text-center mt-10">
+        * Todos los precios son en pesos mexicanos. Incluyen IVA.<br />
+        <span class="text-red-800 font-bold"
+          >** Descuento del 15% disponible en pagos anuales.</span
+        >
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

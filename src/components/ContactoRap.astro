@@ -1,0 +1,61 @@
+---
+const telefono = "+521 961 222 3344";
+const email = "info@nutrilife.com";
+const horarios = "Lun-Vie: 9:00-18:00 - Sab: 9:00-14:00";
+---
+
+<section id="contacto-rapido" class="w-full bg-green-700 py-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex flex-col items-center gap-3 mb-8">
+      <span
+        class="bg-green-200 text-green-900 text-sm font-semibold px-4 py-1 rounded-full shadow"
+        >Contacto</span
+      >
+      <h2 class="text-5xl font-bold text-white text-center">¿Tienes dudas?</h2>
+      <p class="text-lg text-white text-center max-w-2xl">
+        Agenda tu consulta gratuita y descubre cómo podemos ayudarte a alcanzar
+        tus objetivos de salud y bienestar.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-center">
+      <div class="flex flex-col items-center">
+        <img
+          src="/Iconos/telefono.png"
+          alt="Icono Teléfono"
+          class="w-10 h-10 mx-auto mb-3"
+        />
+        <h3 class="text-white font-bold text-lg mb-1">Teléfono</h3>
+        <p class="text-white">{telefono}</p>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <img
+          src="/Iconos/correo.png"
+          alt="Icono Teléfono"
+          class="w-10 h-10 mx-auto mb-3"
+        />
+        <h3 class="text-white font-bold text-lg mb-1">Correo electronico</h3>
+        <p class="text-white">{email}</p>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <img
+          src="/Iconos/horario.png"
+          alt="Icono Teléfono"
+          class="w-10 h-10 mx-auto mb-3"
+        />
+        <h3 class="text-white font-bold text-lg mb-1">Horarios</h3>
+        <p class="text-white">{horarios}</p>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <a
+        href="/contacto"
+        class="bg-white hover:bg-yellow-400 hover:text-white text-green-800 font-bold py-3 px-10 rounded-xl text-lg shadow transition"
+        role="button"
+      >
+        Agendar consulta
+      </a>
+    </div>
+  </div>
+</section>
